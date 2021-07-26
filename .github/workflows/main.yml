@@ -13,7 +13,7 @@ jobs:
 
       - name: 🔨 Deployment
         run: |
-          composer install --optimize-autoloader --no-dev
+          composer install --optimize-autoloader
           php artisan config:cache
           php artisan view:cache
 

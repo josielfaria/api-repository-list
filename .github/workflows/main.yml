@@ -11,6 +11,12 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v2
 
+      - name: 🔨 Deployment
+        run: |
+          composer install
+          php artisan config:cache
+          php artisan view:cache
+
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.1.0
         with:
@@ -19,10 +25,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           state-name: public/ftp-deploy-sync-state.json
           server-dir: repository-list/
-
-      - name: 🔨 Deployment
-        run: |
-          composer install
-          php artisan config:cache
-          php artisan view:cache
-

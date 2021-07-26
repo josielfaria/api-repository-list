@@ -18,7 +18,6 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
           state-name: ftp-deploy-sync-state.json
-          local-dir: dist/repository-list/
 
       - name: 🔨 Deployment
         run: |

@@ -17,7 +17,8 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          state-name: ftp-deploy-sync-state.json
+          state-name: public/ftp-deploy-sync-state.json
+          server-dir: repository-list
 
       - name: 🔨 Deployment
         run: |

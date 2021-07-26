@@ -25,3 +25,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           state-name: public/ftp-deploy-sync-state.json
           server-dir: api-repository-list/
+
+      - name: 🎲 Update BD
+        run: |
+          php artisan migrate
